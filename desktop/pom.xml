@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.mslivo</groupId>
         <artifactId>uitemplate</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <artifactId>uitemplate-desktop</artifactId>
     <packaging>jar</packaging>
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>net.mslivo</groupId>
             <artifactId>uitemplate-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 

@@ -11,7 +11,8 @@ public class LauncherMain {
                 CFG_MAIN.APP_TITLE,
                 CFG_MAIN.RESOLUTION_WIDTH,
                 CFG_MAIN.RESOLUTION_HEIGHT,
-                CFG_MAIN.TARGET_FPS);
+                CFG_MAIN.TARGET_FPS,
+                "appicon.png");
     }
 
 }
