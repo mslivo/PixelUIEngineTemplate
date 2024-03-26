@@ -75,8 +75,6 @@ public class UITemplateMain extends ApplicationAdapter {
         this.appEngine.shutdown();
         this.mediaManager.shutdown();
         Tools.Log.done();
-        Gdx.app.exit();
-        System.exit(0);
     }
 
 
