@@ -1,4 +1,4 @@
-package net.mslivo.uitemplate.core.cfg.data;
+package net.mslivo.uitemplate.core.data;
 
 public class DataGenerator {
 

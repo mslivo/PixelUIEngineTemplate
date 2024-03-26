@@ -7,11 +7,11 @@ import net.mslivo.core.engine.tools.Tools;
 import net.mslivo.core.engine.tools.engine.AppEngine;
 import net.mslivo.core.engine.ui_engine.UIEngine;
 import net.mslivo.uitemplate.core.cfg.CFG_MAIN;
-import net.mslivo.uitemplate.core.cfg.data.Data;
-import net.mslivo.uitemplate.core.cfg.data.DataGenerator;
-import net.mslivo.uitemplate.core.cfg.engine.AppAdapter;
-import net.mslivo.uitemplate.core.cfg.ui.UIAdapter;
-import net.mslivo.uitemplate.core.cfg.ui.media.BaseMedia;
+import net.mslivo.uitemplate.core.data.Data;
+import net.mslivo.uitemplate.core.data.DataGenerator;
+import net.mslivo.uitemplate.core.engine.AppAdapter;
+import net.mslivo.uitemplate.core.ui.UIAdapter;
+import net.mslivo.uitemplate.core.ui.media.BaseMedia;
 
 public class UITemplateMain extends ApplicationAdapter {
     private MediaManager mediaManager;

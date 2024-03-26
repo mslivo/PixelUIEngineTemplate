@@ -1,7 +1,6 @@
-package net.mslivo.uitemplate.core.cfg.ui;
+package net.mslivo.uitemplate.core.ui;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import net.mslivo.core.engine.media_manager.MediaManager;
 import net.mslivo.core.engine.tools.engine.AppEngine;
@@ -10,8 +9,8 @@ import net.mslivo.core.engine.ui_engine.UIEngineAdapter;
 import net.mslivo.core.engine.ui_engine.render.ImmediateRenderer;
 import net.mslivo.core.engine.ui_engine.render.SpriteRenderer;
 import net.mslivo.core.engine.ui_engine.ui.components.viewport.AppViewPort;
-import net.mslivo.uitemplate.core.cfg.data.Data;
-import net.mslivo.uitemplate.core.cfg.engine.AppAdapter;
+import net.mslivo.uitemplate.core.data.Data;
+import net.mslivo.uitemplate.core.engine.AppAdapter;
 
 public class UIAdapter implements UIEngineAdapter {
     private AppEngine<AppAdapter, Data> appEngine;

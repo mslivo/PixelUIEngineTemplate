@@ -1,8 +1,8 @@
-package net.mslivo.uitemplate.core.cfg.engine;
+package net.mslivo.uitemplate.core.engine;
 
 import net.mslivo.core.engine.tools.engine.AppEngineAdapter;
 import net.mslivo.core.engine.tools.engine.Output;
-import net.mslivo.uitemplate.core.cfg.data.Data;
+import net.mslivo.uitemplate.core.data.Data;
 
 public class AppAdapter implements AppEngineAdapter<Data> {
 
