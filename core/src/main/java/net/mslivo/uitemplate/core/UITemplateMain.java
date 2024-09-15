@@ -1,10 +1,10 @@
 package net.mslivo.uitemplate.core;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
 import net.mslivo.core.engine.media_manager.MediaManager;
 import net.mslivo.core.engine.tools.Tools;
-import net.mslivo.core.engine.tools.engine.AppEngine;
+import net.mslivo.core.engine.tools.appengine.AppEngine;
+import net.mslivo.core.engine.tools.appengine.AppEngineAdapter;
 import net.mslivo.core.engine.ui_engine.UIEngine;
 import net.mslivo.uitemplate.core.cfg.CFG_MAIN;
 import net.mslivo.uitemplate.core.data.Data;
@@ -17,7 +17,7 @@ public class UITemplateMain extends ApplicationAdapter {
     private MediaManager mediaManager;
     private Data data;
     private UIEngine<UIAdapter> uiEngine;
-    private AppEngine appEngine;
+    private AppEngine<AppAdapter,Data> appEngine;
     private long timer_debug_info;
 
     public UITemplateMain() {
@@ -33,26 +33,26 @@ public class UITemplateMain extends ApplicationAdapter {
     public void create() {
         Tools.App.setTargetUpdates(CFG_MAIN.TARGET_FPS);
         // MediaManager
-        Tools.Log.inProgress("Loading Assets");
+        Tools.App.logInProgress("Loading Assets");
         this.mediaManager = new MediaManager();
         this.mediaManager.prepareUICMedia();
         this.mediaManager.prepareCMedia(BaseMedia.ALL);
         this.mediaManager.loadAssets();
-        Tools.Log.done();
+        Tools.App.logDone();
         // App Engine
-        Tools.Log.inProgress("Loading Engine");
+        Tools.App.logInProgress("Loading Engine");
         this.data = DataGenerator.createData();
         this.appEngine = new AppEngine<>(new AppAdapter(), this.data);
-        Tools.Log.done();
+        Tools.App.logDone();
         // UI Engine
-        Tools.Log.inProgress("Loading UI");
+        Tools.App.logInProgress("Loading UI");
         this.uiEngine = new UIEngine<>(new UIAdapter(this.appEngine), this.mediaManager, CFG_MAIN.RESOLUTION_WIDTH, CFG_MAIN.RESOLUTION_HEIGHT);
-        Tools.Log.done();
+        Tools.App.logDone();
     }
 
     @Override
     public void render() {
-        if (Tools.App.isRunUpdate()) {
+        if (Tools.App.runUpdate()) {
             // Update
             this.uiEngine.update();
             this.appEngine.update();
@@ -63,18 +63,18 @@ public class UITemplateMain extends ApplicationAdapter {
 
         // Log Benchmark
         if (System.currentTimeMillis() - timer_debug_info > 5000) {
-            Tools.Log.benchmark();
+            Tools.App.logBenchmark();
             timer_debug_info = System.currentTimeMillis();
         }
     }
 
     @Override
     public void dispose() {
-        Tools.Log.inProgress("Shutting down...");
+        Tools.App.logInProgress("Shutting down...");
         this.uiEngine.shutdown();
         this.appEngine.shutdown();
         this.mediaManager.shutdown();
-        Tools.Log.done();
+        Tools.App.logDone();
     }
 
 

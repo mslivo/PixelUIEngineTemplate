@@ -1,7 +1,6 @@
 package net.mslivo.uitemplate.core.ui.media;
 
-import net.mslivo.core.engine.media_manager.MediaManager;
-import net.mslivo.core.engine.media_manager.media.CMedia;
+import net.mslivo.core.engine.media_manager.CMedia;
 
 public class BaseMedia {
 

@@ -2,13 +2,15 @@ package net.mslivo.uitemplate.core.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import net.mslivo.core.engine.media_manager.MediaManager;
-import net.mslivo.core.engine.tools.engine.AppEngine;
+import net.mslivo.core.engine.tools.appengine.AppEngine;
+import net.mslivo.core.engine.tools.appengine.AppEngineIO;
 import net.mslivo.core.engine.ui_engine.API;
 import net.mslivo.core.engine.ui_engine.UIEngineAdapter;
-import net.mslivo.core.engine.ui_engine.render.ImmediateRenderer;
-import net.mslivo.core.engine.ui_engine.render.SpriteRenderer;
-import net.mslivo.core.engine.ui_engine.ui.components.viewport.AppViewPort;
+import net.mslivo.core.engine.ui_engine.rendering.PrimitiveRenderer;
+import net.mslivo.core.engine.ui_engine.rendering.SpriteRenderer;
+import net.mslivo.core.engine.ui_engine.ui.components.viewport.AppViewport;
 import net.mslivo.uitemplate.core.data.Data;
 import net.mslivo.uitemplate.core.engine.AppAdapter;
 
@@ -38,31 +40,18 @@ public class UIAdapter implements UIEngineAdapter {
         //appEngine.input();
     }
 
+
+
     private void processOutput() {
-        while (appEngine.nextOutput()) {
-            int type = appEngine.getOutputType();
-            Object[] params = appEngine.getOutputParams();
+        while (appEngine.outputAvailable()) {
+            AppEngineIO output = appEngine.processOutput();
         }
     }
 
     @Override
-    public void render(SpriteRenderer spriteRenderer, ImmediateRenderer immediateRenderer, AppViewPort appViewPort) {
+    public void render(OrthographicCamera orthographicCamera, AppViewport appViewport) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-
-        immediateRenderer.begin();
-
-        float r = 0,g = 0,b = 0;
-        for (int ix = 0; ix < api.resolutionWidth(); ix++) {
-            for (int iy = 0; iy < api.resolutionHeight(); iy++) {
-                r = ix/(float)api.resolutionWidth();
-                g = iy/(float)api.resolutionHeight();
-                immediateRenderer.setColor(r,g,b);
-                immediateRenderer.vertex(ix,iy);
-            }
-        }
-        immediateRenderer.end();
 
 
     }

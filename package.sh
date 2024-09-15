@@ -18,18 +18,18 @@ export MAIN_CLASS="net.mslivo.uitemplate.desktop.LauncherMain"
 #WINDOWS
 export WIN_ENABLED="true"
 export DIR_WIN="temp/out_win"
-export JDK_WIN="C:/Program Files/Java/win/jdk-21.0.1+12-jre" 
+export JDK_WIN="C:/Program Files/Java/win/jdk-22.0.2+9-jre"
 export ICON_WIN="./buildtools/appicon.ico"
 
 #LINUX
 export LINUX_ENABLED="true"
 export DIR_LINUX="temp/out_linux"
-export JDK_LINUX="C:/Program Files/Java/linux/jdk-21.0.1+12-jre" 
+export JDK_LINUX="C:/Program Files/Java/linux/jdk-22.0.2+9-jre"
 
 #MACOS
 export MAC_ENABLED="true"
 export DIR_MAC="temp/out_mac"
-export JDK_MAC="C:/Program Files/Java/macos/jdk-21.0.1+12-jre" 
+export JDK_MAC="C:/Program Files/Java/macos/jdk-22.0.2+9-jre"
 export ICON_MAC="./buildtools/appicon.icns"
 
 # Init
