@@ -7,7 +7,7 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <properties>
-        <java.version>22</java.version>
+        <java.version>23</java.version>
         <pixelui.version>1.0</pixelui.version>
         <mainClass>net.mslivo.uitemplate.desktop.LauncherMain</mainClass>
     </properties>
